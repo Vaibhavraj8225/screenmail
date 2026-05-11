@@ -2,9 +2,10 @@ This app extracts html part of eml files renders them using playwright screensho
 This app is created to process batch of eml files at once to get the overview of them also it disable any javascript to avoid any suspicious action.
 <br><br>
 <b>Directory Structure</b>
-screenmail/
-│
-├── emails/
+<br><br>
+screenmail/  <br>
+│  <br>
+├── emails/  <br>
 │   ├── mail1.eml
 │   ├── mail2.eml
 │   └── ...
