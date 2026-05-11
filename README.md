@@ -6,21 +6,21 @@ This app is created to process batch of eml files at once to get the overview of
 screenmail/  <br>
 │  <br>
 ├── emails/  <br>
-│   ├── mail1.eml
-│   ├── mail2.eml
-│   └── ...
-│
-├── screenshots/
-│   ├── mail1.png
-│   ├── mail2.png
-│   └── ...
-│
-├── rendered/
-│   ├── mail1.html
-│   ├── mail2.html
-│   └── ...
-│
-├── logs/
-│   └── errors.log
-│
-└── main.py
+│   ├── mail1.eml  <br>
+│   ├── mail2.eml  <br>
+│   └── ...  <br>
+│ <br>
+├── screenshots/  <br>
+│   ├── mail1.png  <br>
+│   ├── mail2.png  <br>
+│   └── ...  <br>
+│  <br>
+├── rendered/  <br>
+│   ├── mail1.html  <br>
+│   ├── mail2.html  <br>
+│   └── ...  <br>
+│  <br>
+├── logs/  <br>
+│   └── errors.log  <br>
+│  <br>
+└── main.py  <br>
