@@ -52,6 +52,8 @@ async def render_email(browser, html_path, screenshot_path):
             "height": 1200
         }
     )
+    page.set_default_timeout(30000)
+    page.set_default_navigation_timeout(30000)
 
     await page.goto(
         f"file://{os.path.abspath(html_path)}",
@@ -205,14 +207,26 @@ async def main():
         if f.endswith(".eml")
     ]
 
+    semaphore = asyncio.Semaphore(5)
+
     async with async_playwright() as p:
 
         browser = await p.chromium.launch(
-            headless=True
+            headless=True,
+            args=[
+                "--disable-dev-shm-usage",
+                "--no-sandbox",
+                "--disable-gpu",
+                "--disable-setuid-sandbox"
+            ]
         )
 
+        async def limited_process(eml):
+            async with semaphore:
+                await process_email(browser, eml)
+
         tasks = [
-            process_email(browser, eml)
+            limited_process(eml)
             for eml in eml_files
         ]
 
